@@ -1,0 +1,229 @@
+Session 1
+Q1. 
+	public class day5
+	{  
+    public static void main(String[] args) {  
+        //Initialize array  
+        int [] arr = new int [] {1, 2, 3, 4, 5};  
+        System.out.println("Elements of given array: ");  
+        //Loop through the array by incrementing value of i  
+        for (int i = 0; i < arr.length; i++) {  
+            System.out.print(arr[i] + " ");  
+        }  
+    }  
+} 
+
+Q2.
+
+	class day5 {
+     
+    
+    static average(int a[], int n)
+    {
+        
+        int sum = 0;
+         
+        for (int i = 0; i < n; i++)
+            sum += a[i];
+     
+        return sum / n;
+    }
+     
+   
+    public static void main (String[] args)
+    {
+         
+        int arr[] = {10, 2, 3, 4, 5, 6, 7, 8, 9};
+        int n = arr.length;
+     
+        System.out.println(average(arr, n));
+    }
+}
+
+Q3.
+		package day5;
+
+	public class CalcNumbers {
+		
+	public static void main(String args[])
+	{
+		int n[] = {1,2,3,4,5};
+
+		   for (int i:n) 
+		   {
+			 System.out.println(n[i]);
+			 
+		   }
+	}
+	}
+
+Q4.
+	public class day5 {
+   public static void main(String[] args) {
+      char[] c = {'p','q','r','s','t','u','v'};
+      
+      String str = String.valueOf(c);
+      System.out.println("String: "+str);
+   }
+}
+
+Q5.
+	public class day5 {
+
+    public static void main(String[] args) {
+        int rows = 2, columns = 3;
+        int[][] firstMatrix = { {6, 1, 6}, {5, 8, 3} };
+        int[][] secondMatrix = { {4, 8, 3}, {9, 6, 3} };
+
+        
+        int[][] sum = new int[rows][columns];
+        for(int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
+                sum[i][j] = firstMatrix[i][j] + secondMatrix[i][j];
+            }
+        }
+
+        System.out.println("Sum of two matrices is: ");
+        for(int[] row : sum) {
+            for (int column : row) {
+                System.out.print(column + "    ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+Q7.
+
+	public class day5 {
+
+   
+	static Pair getMinMax(int arr[], int n) {
+    Pair minmax = new  Pair();
+	
+	for (i = 2; i < n; i++) {
+            if (arr[i] > minmax.max) {
+                minmax.max = arr[i];
+            } else if (arr[i] < minmax.min) {
+                minmax.min = arr[i];
+            }
+        }
+	return minmax;
+	}
+	public static void main(String args[]) {
+        int arr[] = {1,2,3,4,5,};
+        int arr_size = 6;
+        Pair minmax = getMinMax(arr, arr_size);
+        System.out.printf("\nMinimum element is %d", minmax.min);
+		}
+----------------------------------------------------------------------------------------------------------		
+Session 2
+
+Q1.
+	package day5;
+
+public class Student {
+	
+		public static void stud() {
+	
+			String name = "mudit";
+			int age = 23;
+			System.out.println("Student name: "+name);
+		}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Student.stud();
+
+	}
+
+}
+
+
+Q2.
+	package day5;
+
+public class Product {
+	
+	int age;
+	String name;
+	
+	public Product() {
+		age = 23;
+		name = "mudit";
+	}
+	
+	void Pr() {
+		age = 12;
+		name = "tidum";
+		
+			
+	}
+	
+	public static void main(String args[]) {
+		Product p = new Product();
+		System.out.println(p.age);
+		System.out.println(p.age);
+		
+		}
+
+
+}
+
+
+Q3.
+	package day5;
+
+public class parameter {
+
+	public parameter() 
+	{
+		System.out.println("Default");
+	}
+	
+	public parameter(String name) {
+		System.out.println("Paramertre");
+		System.out.println(name);
+	}
+	
+	public static void  main(String args []) {
+		parameter p = new parameter();
+		parameter p1 = new parameter("Mudit");
+	}
+	
+}
+
+Q4.
+	public class Calc
+	{
+		public static int sub(int a, int b)
+		{
+			int c;
+			c= a-b;
+			return c;
+			
+		}
+		public ststic void add()
+		{
+		system.out.println("withour return type")
+		
+		}
+		
+		public ststic void main(String args[])
+		{
+			system.out.println(	calc.sub(4,5));
+			system.out.println(add());
+		
+		}
+	}
+	
+Q5.
+	public class wrap{
+		public static void main(String args []){
+			int a = Integer.parseInt(args[0]);
+			int b = Integer.parseInt(args[1]);
+			
+			int c = a+b;
+			System.out.println("Addition"+c)
+		}
+	}

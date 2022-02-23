@@ -1,0 +1,26 @@
+Session 1------------------------------------------
+Q1.
+
+	
+public class Ins {
+
+	int number;         
+    float ratio;        
+    boolean success;    
+ 
+    String name;        
+    Object obj;         
+ 
+    public void print() {
+        System.out.println("number = " + number);
+        System.out.println("ratio = " + ratio);
+        System.out.println("success = " + success);
+        System.out.println("name = " + name);
+        System.out.println("obj = " + obj);
+    }
+ 
+    public static void main(String[] args) {
+        new Ins().print();
+    }
+    
+}

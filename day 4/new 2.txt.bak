@@ -1,0 +1,123 @@
+
+// session 1 
+1.
+	public class Question1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("hello world");
+
+	}
+
+}
+
+		
+2.	
+	public class AddTwoNumbers {
+
+   public static void main(String[] args) {
+        
+      int num1 = 5, num2 = 15, sum;
+      sum = num1 + num2;
+
+      System.out.println("Sum of these numbers: "+sum);
+   }
+}
+
+3.
+	public class Compound {
+
+    public void calculate(int p, int t, double r, int n) {
+        double amount = p * Math.pow(1 + (r / n), n * t);
+        double cinterest = amount - p;
+        System.out.println("Compound Interest after " + t + " years: "+cinterest);
+        System.out.println("Amount after " + t + " years: "+amount);
+    }
+    public static void main(String args[]) {
+    	Compound obj = new ();
+    	obj.calculate(2000, 5, .08, 12);
+    }
+}
+	
+4.
+	public class Circle
+{
+   public static void main(String[] args)
+   {
+      float r, area, circum;
+      Scanner s = new Scanner(System.in);
+      
+      System.out.print("Enter the Radius of Circle: ");
+      r = s.nextFloat();
+      
+      area = (float)(3.14*r*r);
+      circum = (float)(2*3.14*r);
+      System.out.println("\nArea = " +area);
+      System.out.println("Circumference = " +circum);
+   }
+}
+
+5. public class def {
+   static boolean val1;
+   static double val2;
+   static float val3;
+   static int val4;
+   static long val5;
+   static String val6;
+   public static void main(String[] args) {
+      System.out.println("Default values ");
+      System.out.println("boolean = " + val1);
+      System.out.println("double = " + val2);
+      System.out.println("float = " + val3);
+      System.out.println("int = " + val4);
+      System.out.println("long = " + val5);
+      System.out.println("String = " + val6);
+   }
+}
+
+6.
+	public static void main(String args[])
+	{
+	Scanner sc = new Scanner(System.in);
+	int sum = 0, n;
+	int a = 0;
+	int b = 1;
+	System.out.println("Enter the nth value: ");
+	n = sc.nextInt();
+	System.out.println("Fibonacci series: ");
+	while(sum <= n)
+	{
+	System.out.print(sum + " ");
+	a = b;  
+	b = sum;
+	sum = a + b;  
+	}
+}
+
+// session 2
+
+1.
+	public static void main (String[] args)
+   {		
+       int i =0;
+       int num =0;
+       String  primeNum = "";
+
+       for (i = 1; i <= 100; i++)         
+       { 		  	  
+          int count=0; 	  
+          for(num =i; num>=1; num--)
+	  {
+             if(i%num==0)
+	     {
+ 		count = count + 1;
+	     }
+	  }
+	  if (count ==2)
+	  {
+	     primeNumbers = primeNumbers + i + " ";
+	  }	
+       }	
+       System.out.println("Prime numbers from 1 to 100 are :");
+       System.out.println(primeNum);
+   }

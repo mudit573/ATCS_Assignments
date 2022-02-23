@@ -1,0 +1,273 @@
+Section 1:
+
+Question 1:
+
+package atcs;
+
+public class Boxunbox {
+
+	public static void main(String[] args) {
+		 int x = 100;
+		 
+		 Integer obj = new Integer(x);  //Autoboxing
+		 Integer obj1 = 78;
+		 System.out.println(obj + " "+ obj1);
+		 
+		 
+		 Integer i = new Integer(100);  //Autounboxing
+		 int a = i;
+		 System.out.println(a);
+
+	}
+
+}
+
+
+Output:
+
+100 78
+100
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Question 2:
+
+package assignments;
+
+public class WrapperDemo
+{
+  public static void main (String args[])
+  {
+    Integer intObj1 = new Integer (25);
+    Integer intObj2 = new Integer ("25");
+    Integer intObj3= new Integer (35);
+    //compareTo demo
+    System.out.println("Comparing using compareTo Obj1 and Obj2: " + intObj1.compareTo(intObj2));
+    System.out.println("Comparing using compareTo Obj1 and Obj3: " + intObj1.compareTo(intObj3));
+    //Equals demo
+    System.out.println("Comparing using equals Obj1 and Obj2: " + intObj1.equals(intObj2));
+    System.out.println("Comparing using equals Obj1 and Obj3: " + intObj1.equals(intObj3));
+    Float f1 = new Float("2.25f");
+    Float f2 = new Float("20.43f");
+    Float f3 = new Float(2.25f);
+    System.out.println("Comparing using compare f1 and f2: " +Float.compare(f1,f2));
+    System.out.println("Comparing using compare f1 and f3: " +Float.compare(f1,f3));
+    //Addition of Integer with Float
+    Float f = intObj1.floatValue() + f1;
+    System.out.println("Addition of intObj1 and f1: "+ intObj1 +"+" +f1+"=" +f );
+  }
+}
+
+Output:
+
+Comparing using compareTo Obj1 and Obj2: 0
+Comparing using compareTo Obj1 and Obj3: -1
+Comparing using equals Obj1 and Obj2: true
+Comparing using equals Obj1 and Obj3: false
+Comparing using compare f1 and f2: -1
+Comparing using compare f1 and f3: 0
+Addition of intObj1 and f1: 25+2.25=27.25
+
+
+Methods of Wrapper Class in Java:
+
+1.	typeValue()	Returns the Converted value of this Number object to the specified data type.
+2.	compareTo()	It compares this Number object to the specified argument.
+3.	equals()	It checks whether this Number object is equal to the specified argument.
+4.	valueOf()	Returns an Integer object holding the specified primitive type value.
+5.	toString()	Returns a String object holding the value of a specified Integer type argument.
+6.	parseInt()	Retrieves the primitive data type of a specified String.
+7.	abs()	Returns the absolute value of the specified argument.
+8.	ceil()	Returns the smallest integer that is equal to or greater than the specified argument in double format.
+9.	floor()	Returns the largest integer that is equal to or less than the specified argument in double format.
+10.	round()	Returns the closest long or int according to the return type of the method.
+11.	min()	Returns the smaller between two arguments.
+12.	max()	Returns the larger between the two arguments.
+13.	exp()	Returns e to the power of the argument, i.e. base of the natural logarithms.
+14.	log()	Returns the natural logarithm of the specified argument.
+15.	pow()	Returns the result of the first argument raised to the power of the second argument.
+16.	sqrt()	Returns the square root of the specified argument.
+17.	sin()	Returns the value of sine of the specified double value.
+18.	cos()	Returns the value of the cosine of the specified double value.
+19.	tan()	Returns the value of the tangent of the specified double value.
+20.	asin()	Returns the value of the arcsine of the specified double value.
+21.	acos()	Returns the value of the arccosine of the specified double value.
+22.	atan()	Returns the value of the arctangent of the specified double value.
+23.	toDegrees()	Converts the value of the argument to degrees.
+24.	toRadians()	Converts the value of the argument to radians.
+25.	random()	This method returns a random number.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Question 3:
+
+package assignments;
+
+public class Convertntowrapper {
+
+	public static void main(String[] args) {
+		// create primitive types
+	    int var1 = 5;
+	    double var2 = 5.65;
+	    boolean var3 = true;
+
+	    //converts into wrapper objects
+	    Integer obj1 = Integer.valueOf(var1);
+	    Double obj2 = Double.valueOf(var2);
+	    Boolean obj3 = Boolean.valueOf(var3);
+
+	    // checks if obj are objects of
+	    // corresponding wrapper class
+	    if(obj1 instanceof Integer) {
+	      System.out.println("An object of Integer is created.");
+	    }
+
+	    if(obj2 instanceof Double) {
+	      System.out.println("An object of Double is created.");
+	    }
+
+	    if(obj3 instanceof Boolean) {
+	      System.out.println("An object of Boolean is created");
+	    }
+
+	}
+
+}
+
+Output:
+
+An object of Integer is created.
+An object of Double is created.
+An object of Boolean is created
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Question 4:
+
+package assignments;
+
+public class EnumClass {
+	
+enum Leveling{
+		
+		LOW, HIGH,MEDIUM,
+	}
+
+	public static void main(String[] args) {
+		
+		Leveling obj= Leveling.HIGH;
+		System.out.println(obj);
+		
+		
+		for(Leveling obj1:Leveling.values()){
+			System.out.println(obj1);
+		}
+
+	}
+
+}
+
+Output:
+
+HIGH
+LOW
+HIGH
+MEDIUM
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Question 5:
+
+package assignments;
+
+import java.util.Arrays;
+
+public class ArrayEx {
+
+	public static void main(String[] args) {
+		
+		int[] marks = {46,56,78,94,45,33,77,89,95};
+		
+		System.out.println("Before Sorting marks: ");
+		System.out.println(Arrays.toString(marks));
+		
+		Arrays.sort(marks);
+		
+		System.out.println("after Sorting marks:");
+		System.out.println(Arrays.toString(marks));
+
+	}
+
+}
+
+
+output:
+
+Before Sorting marks: 
+[46, 56, 78, 94, 45, 33, 77, 89, 95]
+after Sorting marks:
+[33, 45, 46, 56, 77, 78, 89, 94, 95]
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Question 6:
+
+package assignments;
+
+import static java.lang.System.*;
+
+public class Statimport {
+
+	public static void main(String[] args) {
+		
+		out.println("printing using static import");
+
+		
+
+	}
+
+}
+
+
+Output:
+
+printing using static import
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Question 7:
+
+package assignments;
+
+public class Constructorchaining {
+	
+	public Constructorchaining(){
+		
+		this("nikhil");
+		System.out.println("Calling deafault constructor");
+		System.out.println(this);
+	}
+	
+
+	  public Constructorchaining(String name) {
+
+		  System.out.println("This is parametarized constructor called by defalut constructor");
+	  }
+
+	public static void main(String[] args) {
+		Constructorchaining obj = new Constructorchaining();
+
+	}
+
+}
+
+Output:
+
+This is parametarized constructor called by defalut constructor
+Calling deafault constructor
+assignments.Constructorchaining@7852e922
+

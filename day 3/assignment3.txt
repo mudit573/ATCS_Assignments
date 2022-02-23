@@ -1,0 +1,186 @@
+1. 
+
+	The Bourne Shell
+	The C Shell
+	The Korn Shell
+	The GNU Bourne-Again Shell
+	
+
+	
+	
+Session 2
+
+
+Dell@Mudit573 MINGW64 /e/ATCS/assignment 31-1-22 (main)
+$ git config --global user.name "Mudit"
+
+Dell@Mudit573 MINGW64 /e/ATCS/assignment 31-1-22 (main)
+$ git config --global user.email "mudit1998mathur@gmail.com"
+
+Dell@Mudit573 MINGW64 /e/ATCS/assignment 31-1-22 (main)
+$ mkdir test1
+
+Dell@Mudit573 MINGW64 /e/ATCS/assignment 31-1-22 (main)
+$ ls
+abc.txt  assignment3.txt  test1/
+
+Dell@Mudit573 MINGW64 /e/ATCS/assignment 31-1-22 (main)
+$ cd test1
+
+Dell@Mudit573 MINGW64 /e/ATCS/assignment 31-1-22/test1 (main)
+$ git init
+Initialized empty Git repository in E:/ATCS/assignment 31-1-22/test1/.git/
+
+Dell@Mudit573 MINGW64 /e/ATCS/assignment 31-1-22/test1 (master)
+$ ls
+
+Dell@Mudit573 MINGW64 /e/ATCS/assignment 31-1-22/test1 (master)
+$ touch a.txt
+
+Dell@Mudit573 MINGW64 /e/ATCS/assignment 31-1-22/test1 (master)
+$ cat >> a.txt
+hi this is mudit
+
+Dell@Mudit573 MINGW64 /e/ATCS/assignment 31-1-22/test1 (master)
+$ git ststus
+git: 'ststus' is not a git command. See 'git --help'.
+
+The most similar command is
+        status
+
+Dell@Mudit573 MINGW64 /e/ATCS/assignment 31-1-22/test1 (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        a.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Dell@Mudit573 MINGW64 /e/ATCS/assignment 31-1-22/test1 (master)
+$ git commit -a -m "update a.txt file"
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        a.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Dell@Mudit573 MINGW64 /e/ATCS/assignment 31-1-22/test1 (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        a.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Dell@Mudit573 MINGW64 /e/ATCS/assignment 31-1-22/test1 (master)
+$ git commit -a -m "update a.txt file"
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        a.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Dell@Mudit573 MINGW64 /e/ATCS/assignment 31-1-22/test1 (master)
+$ cat >> a.txt
+I am from jodhpur
+
+Dell@Mudit573 MINGW64 /e/ATCS/assignment 31-1-22/test1 (master)
+$ git commit -a -m "update a.txt file"
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        a.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Dell@Mudit573 MINGW64 /e/ATCS/assignment 31-1-22/test1 (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        a.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Dell@Mudit573 MINGW64 /e/ATCS/assignment 31-1-22/test1 (master)
+$ git commit -a -m "update a.txt file"
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        a.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Dell@Mudit573 MINGW64 /e/ATCS/assignment 31-1-22/test1 (master)
+$ cat >> a.txt
+
+Dell@Mudit573 MINGW64 /e/ATCS/assignment 31-1-22/test1 (master)
+$ cat a.txt
+hi this is mudit
+I am from jodhpur
+
+Dell@Mudit573 MINGW64 /e/ATCS/assignment 31-1-22/test1 (master)
+$ git commit -a -m "update a.txt file"
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        a.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Dell@Mudit573 MINGW64 /e/ATCS/assignment 31-1-22/test1 (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        a.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Dell@Mudit573 MINGW64 /e/ATCS/assignment 31-1-22/test1 (master)
+$ git branch bookstore
+fatal: not a valid object name: 'master'
+
+Dell@Mudit573 MINGW64 /e/ATCS/assignment 31-1-22/test1 (master)
+$ ls
+a.txt
+
+Dell@Mudit573 MINGW64 /e/ATCS/assignment 31-1-22/test1 (master)
+$ git branch bookstore
+fatal: not a valid object name: 'master'
+
+Dell@Mudit573 MINGW64 /e/ATCS/assignment 31-1-22/test1 (master)
+$ git branch bookstore *master
+fatal: not a valid object name: '*master'
+	

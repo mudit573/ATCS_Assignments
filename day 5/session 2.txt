@@ -1,0 +1,110 @@
+Session 2
+
+Q1.
+	package day5;
+
+public class Student {
+	
+		public static void stud() {
+	
+			String name = "mudit";
+			int age = 23;
+			System.out.println("Student name: "+name);
+		}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Student.stud();
+
+	}
+
+}
+
+
+Q2.
+	package day5;
+
+public class Product {
+	
+	int age;
+	String name;
+	
+	public Product() {
+		age = 23;
+		name = "mudit";
+	}
+	
+	void Pr() {
+		age = 12;
+		name = "tidum";
+		
+			
+	}
+	
+	public static void main(String args[]) {
+		Product p = new Product();
+		System.out.println(p.age);
+		System.out.println(p.age);
+		
+		}
+
+
+}
+
+
+Q3.
+	package day5;
+
+public class parameter {
+
+	public parameter() 
+	{
+		System.out.println("Default");
+	}
+	
+	public parameter(String name) {
+		System.out.println("Paramertre");
+		System.out.println(name);
+	}
+	
+	public static void  main(String args []) {
+		parameter p = new parameter();
+		parameter p1 = new parameter("Mudit");
+	}
+	
+}
+
+Q4.
+	public class Calc
+	{
+		public static int sub(int a, int b)
+		{
+			int c;
+			c= a-b;
+			return c;
+			
+		}
+		public ststic void add()
+		{
+		system.out.println("withour return type")
+		
+		}
+		
+		public ststic void main(String args[])
+		{
+			system.out.println(	calc.sub(4,5));
+			system.out.println(add());
+		
+		}
+	}
+	
+Q5.
+	public class wrap{
+		public static void main(String args []){
+			int a = Integer.parseInt(args[0]);
+			int b = Integer.parseInt(args[1]);
+			
+			int c = a+b;
+			System.out.println("Addition"+c)
+		}
+	}

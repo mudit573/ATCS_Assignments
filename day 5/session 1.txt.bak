@@ -1,0 +1,93 @@
+Q1. 
+	public class day5
+	{  
+    public static void main(String[] args) {  
+        //Initialize array  
+        int [] arr = new int [] {1, 2, 3, 4, 5};  
+        System.out.println("Elements of given array: ");  
+        //Loop through the array by incrementing value of i  
+        for (int i = 0; i < arr.length; i++) {  
+            System.out.print(arr[i] + " ");  
+        }  
+    }  
+} 
+
+Q2.
+
+	class day5 {
+     
+    
+    static average(int a[], int n)
+    {
+        
+        int sum = 0;
+         
+        for (int i = 0; i < n; i++)
+            sum += a[i];
+     
+        return sum / n;
+    }
+     
+   
+    public static void main (String[] args)
+    {
+         
+        int arr[] = {10, 2, 3, 4, 5, 6, 7, 8, 9};
+        int n = arr.length;
+     
+        System.out.println(average(arr, n));
+    }
+}
+
+Q3.
+		package day5;
+
+	public class CalcNumbers {
+		
+	public static void main(String args[])
+	{
+		int n[] = {1,2,3,4,5};
+
+		   for (int i:n) 
+		   {
+			 System.out.println(n[i]);
+			 
+		   }
+	}
+	}
+
+Q4.
+	public class day5 {
+   public static void main(String[] args) {
+      char[] c = {'p','q','r','s','t','u','v'};
+      
+      String str = String.valueOf(c);
+      System.out.println("String: "+str);
+   }
+}
+
+Q5.
+	public class day5 {
+
+    public static void main(String[] args) {
+        int rows = 2, columns = 3;
+        int[][] firstMatrix = { {6, 1, 6}, {5, 8, 3} };
+        int[][] secondMatrix = { {4, 8, 3}, {9, 6, 3} };
+
+        
+        int[][] sum = new int[rows][columns];
+        for(int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
+                sum[i][j] = firstMatrix[i][j] + secondMatrix[i][j];
+            }
+        }
+
+        System.out.println("Sum of two matrices is: ");
+        for(int[] row : sum) {
+            for (int column : row) {
+                System.out.print(column + "    ");
+            }
+            System.out.println();
+        }
+    }
+}
