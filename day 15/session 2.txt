@@ -1,0 +1,133 @@
+1.Create a Deadlock class to demonstrate deadlock in multithreading environment.
+
+
+public class deadockThread {
+ 
+		  public static void main(String[] args) {  
+		    final String resource1 = "Mudit Mathur";  
+		    final String resource2 = "Mathur Mudit";  
+		    // t1 tries to lock resource1 then resource2  
+		    Thread t1 = new Thread() 
+		    {  
+		      public void run() {  
+		          synchronized (resource1) {  
+		           System.out.println("Thread 1: locked resource 1");  
+		  
+		           try { Thread.sleep(100);} catch (Exception e) {}  
+		  
+		           synchronized (resource2) {  
+		            System.out.println("Thread 1: locked resource 2");  
+		           }  
+		         }  
+		      }  
+		    };  
+		  
+		    // t2 tries to lock resource2 then resource1  
+		    Thread t2 = new Thread() {  
+		      public void run() {  
+		        synchronized (resource2) {  
+		          System.out.println("Thread 2: locked resource 2");  
+		  
+		          try { Thread.sleep(100);} catch (Exception e) {}  
+		  
+		          synchronized (resource1) {  
+		            System.out.println("Thread 2: locked resource 1");  
+		          }  
+		        }  
+		      }  
+		    };  
+		  
+		      
+		    t1.start();  
+		    t2.start();  
+		  }  
+		}       
+
+2. Implement wait, notify and notifyAll methods.
+
+public class waitTest extends Thread {
+   static Object lock = new Object();
+   static int n;
+   int i;
+   String name;
+   JavaTester(String name, int i) {
+      this.name = name;
+      this.i = i;
+   }
+
+   public void run() {
+      try {
+         synchronized (lock) {
+            while (i != n) {
+               lock.wait();
+            }
+            System.out.println(name + " started");
+            n++;
+            lock.notifyAll();
+         }
+         synchronized (lock) {
+            while (i != n - 4) {
+               lock.wait();
+            }
+            System.out.println(name + " finished");
+            n++;
+            lock.notifyAll();
+         }
+      }
+      catch (InterruptedException e) {
+      }
+   }
+   public static void main(String[] args) throws Exception {
+      new waitTest("a", 0).start();
+      new waitTest("b", 1).start();
+      new waitTest("c", 2).start();
+      new waitTest("d", 3).start();
+  
+}
+}
+
+3.
+public class AccountTesting implements Runnable {
+	private Account acct = new Account();
+	public static void main(String[] args) {
+		AccountTesting r = new AccountTesting();
+		Thread one = new Thread(r);
+		Thread two = new Thread(r);
+		one.setName("Mudit");
+		two.setName("Mathur");
+		one.start();
+		two.start();
+	}
+	@Override
+	public void run() {
+		for (int x = 0; x < 5; x++) {
+			makeWithdrawal(10);
+			if (acct.getBalance() < 0) {
+				System.out.println("account is overdrawn!");
+			}
+		}
+	}
+	private void makeWithdrawal(int amt) {
+		if (acct.getBalance() >= amt) {
+			System.out.println(Thread.currentThread().getName() + " is going to withdraw");
+			try {
+				Thread.sleep(100);
+			} catch (InterruptedException ex) {
+			}
+			acct.withdraw(amt);
+			System.out.println(Thread.currentThread().getName() + " completes the withdrawal");
+		} else {
+			System.out.println("Not enough in account for " + Thread.currentThread().getName() + " to withdraw " + acct.getBalance());
+		}
+	}
+}
+
+class Account {
+	private int balance = 50;
+	public int getBalance() {
+	return balance;
+	}
+	public void withdraw(int amount) {
+	balance = balance - amount;
+	}
+}

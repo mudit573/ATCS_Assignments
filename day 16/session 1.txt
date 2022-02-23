@@ -1,0 +1,81 @@
+1.Lambda and Lambda Block 
+a)
+import java.util.ArrayList;
+
+public class Lambda {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		ArrayList<Integer> numbers = new ArrayList<Integer>();
+		numbers.add(6);
+		numbers.add(3);
+		numbers.add(77);
+		numbers.forEach((n)->{System.out.println(n);});
+		
+
+	}
+
+}
+b)
+interface NumberFinder {
+   int finder(int number1, int number2);
+}
+public class LambdaNumberFinder {
+   public static void main(String args[]) {
+      NumberFinder numberFinder = (number1, number2) -> {
+         int temp = 0;
+         if(number1 > number2) {
+            temp = number1;
+         } else {
+            temp = number2;
+         }
+         return temp; // explicitly return a value
+      };
+      System.out.println("The valus is : " + numberFinder.finder(10, 5));
+   }
+}
+2.Create a Runnable interface and apply lamda expression.
+
+public class LambdaR {
+   public static void main(String[] args) {
+      Runnable r1 = new Runnable() {
+         @Override
+         public void run() { // anonymous class
+            System.out.println("Runnable with Anonymous Class");
+         }
+      };
+      Runnable r2 = () -> {   // lambda expression
+         System.out.println("Runnable with Lambda Expression");
+      };
+      new Thread(r1).start();
+      new Thread(r2).start();
+   }
+}
+ 
+3.Create a class SqureRoot apply lamdaexpreesions.
+
+class SquareRoot
+{
+    public static void main(String args[])
+    {
+        
+        FuncInterface fobj = (int x)->System.out.println(x*x);
+  
+        
+        fobj.abstractFun(5);
+    }
+}
+
+4. Create a class with addition method with parameters.
+   
+public class AdditionL{  
+    public static void main(String[] args) {  
+          
+          
+         
+        Addable ad2=(int a,int b)->(a+b);  
+        System.out.println(ad2.add(100,200));  
+    }  
+}  
+
+

@@ -1,0 +1,165 @@
+1. Create a Thread by extending the Thread class.
+
+
+public class Thread1 extends Thread{
+	public void run() {
+		System.out.println("thread is running"); 
+	}
+	public static void main(String args[]) {
+		Thread1 t1 = new Thread1();
+		t1.start();
+		}
+
+}
+
+2.Create a Thread by Implements the Runnable Interface.
+
+
+public class Thread2 implements Runnable {
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		System.out.println("thread is runnung by runnable intergace");
+		
+	}
+	
+	public static void main(String args []) {
+		Thread2 t2 = new Thread2();
+		Thread t1 = new Thread(t2);
+		t1.start();
+	}
+	
+
+}
+
+3.Create a Thread by extending Thread class set and get the name of thread.
+
+
+public class Thread3 extends Thread {
+	public void run()
+	{
+		System.out.println(Thread.currentThread().getName());
+	}
+	public static void main(String args[])
+	{
+		Thread3 t1 = new Thread3();
+		Thread3 t2 = new Thread3();
+		t1.start();
+		t2.start();
+		
+		
+	}
+
+}
+
+4.Create a Thread by extending Thread class set and get the priority of thread.
+
+
+public class Thread4 extends Thread {
+	public void run() {
+		System.out.println("Priority of thread is: "+ Thread.currentThread().getPriority());
+	}
+	
+	public static void main(String args[])
+	{
+		Thread4 t1 = new Thread4();
+		t1.setPriority(Thread.MAX_PRIORITY);
+		t1.start();
+		
+	}
+
+}
+
+5.  Create a Thread by extending Thread class apply Yield Method.
+
+
+public class Thread5 extends Thread{
+	public void run() {
+		for(int i =0;i<3;i++)
+			System.out.println(Thread.currentThread().getName());
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Thread5 t1 = new Thread5();
+		Thread5 t2 = new Thread5();
+		t1.start();
+		t2.start();
+		for(int i = 0;i<3;i++) {
+			t1.yield();
+			System.out.println(Thread.currentThread().getName());
+		}
+		
+
+	}
+
+}
+
+
+6. Create a Thread by extending Thread class apply join Method.
+
+
+
+public class Thread6 extends Thread{
+	
+	public void run() {
+		for(int i =1;i<4;i++)
+		{
+			try {
+				Thread.sleep(500);
+			}catch(Exception e) {
+				System.out.println(e);
+			}
+			System.out.println(i);
+			
+			}
+		}
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Thread6 t1 = new Thread6();
+		Thread6 t2 = new Thread6();
+		Thread6 t3 = new Thread6();
+		t1.start();
+		try {
+			t1.join();
+		}catch(Exception e){
+			System.out.println(e);}
+		t2.start();
+		t3.start();
+
+	}
+
+}
+
+
+7. Create a Thread by extending Thread class apply sleep Method
+
+
+
+public class Thread7 extends Thread {
+
+	public void run() {
+		for(int i =1;i<5;i++) {
+			try {
+				Thread.sleep(100);
+			}catch(InterruptedException e) {System.out.println(e);}
+			System.out.println(i);
+		}
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Thread7 t1 = new Thread7();
+		Thread7 t2 = new Thread7();
+		t1.start();
+		t2.start();
+ 
+	}
+
+}
+
+
+
+
