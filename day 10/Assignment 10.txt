@@ -1,0 +1,79 @@
+Session 1:
+
+Question 1:
+
+Algorithm for Bubble Sort:
+-------------------------
+
+Step 1: begin BubbleSort(list)
+
+   for all elements of list
+      if arr[i] > arr[i+1]
+         swap(arr[i], arr[i+1])
+      end if
+   end for
+
+Step 2: return arr
+   
+Step 3: end BubbleSort
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Question 2:
+
+Algo for Merge sort:
+--------------------
+
+Step 1: procedure merge(Arr[], lt, mid, rt):
+    int L1 = mid - lt + 1
+    int L2 = rt-mid
+    int left[L1], right[L2]
+    
+Step 2:  for i = 0 to L1:
+        left[i] = Arr[lt + i]
+    END for loop
+    
+Step 3:    for j = 0 to L2:
+        right[j] = Arr[mid+1+j]
+    END for loop
+    
+Step 4:    while(left and right hve elments):
+        if(left[i] < right[j])
+            Add left[i] to the end of Arr
+        else
+            Add right[i] to the end of Arr
+    END while loop
+    
+Step 5: END procedure    
+
+Step 6: procedure Merge_sort(Arr[]):
+        l1 = Merge_sort(L1)
+        l2 = Merge_sort(L2)
+        return merge(l1, l2)
+      END procedure
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Question 3:
+
+Algo for Quick Sort:
+
+Step1: QUICKSORT (array A, start, end)       
+      if (start < end)     
+      p = partition(A, start, end)  
+      QUICKSORT (A, start, p - 1)    
+      QUICKSORT (A, p + 1, end)    
+
+Step 2: PARTITION (array A, start, end)      
+        pivot ? A[end]     
+        i ? start-1     
+        for j ? start to end -1   
+        do if (A[j] < pivot)     
+          then i ? i + 1     
+       swap A[i] with A[j]   
+    
+Step 3: swap A[i+1] with A[end]     
+        return i+1  
+
+Step 4:END
