@@ -1,0 +1,129 @@
+psql (10.20)
+WARNING: Console code page (437) differs from Windows code page (1252)
+         8-bit characters might not work correctly. See psql reference
+         page "Notes for Windows users" for details.
+Type "help" for help.
+
+postgres=# help
+You are using psql, the command-line interface to PostgreSQL.
+Type:  \copyright for distribution terms
+       \h for help with SQL commands
+       \? for help with psql commands
+       \g or terminate with semicolon to execute query
+       \q to quit
+postgres=# create database student;
+CREATE DATABASE
+postgres=# \c student
+You are now connected to database "student" as user "postgres".
+student=# create table stud1(sid int,sname varchar(10),grade varchar(10))
+student-# create table stud1(sid int,sname varchar(10),grade varchar(10));
+ERROR:  syntax error at or near "create"
+LINE 2: create table stud1(sid int,sname varchar(10),grade varchar(1...
+        ^
+student=# create table stud1(sid int,sname varchar(10),grade varchar(10));
+CREATE TABLE
+student=# \d
+         List of relations
+ Schema | Name  | Type  |  Owner
+--------+-------+-------+----------
+ public | stud1 | table | postgres
+(1 row)
+
+
+student=# \d stud1
+                      Table "public.stud1"
+ Column |         Type          | Collation | Nullable | Default
+--------+-----------------------+-----------+----------+---------
+ sid    | integer               |           |          |
+ sname  | character varying(10) |           |          |
+ grade  | character varying(10) |           |          |
+
+
+student=# select * from stud1
+student-# select * from stud1;
+ERROR:  syntax error at or near "select"
+LINE 2: select * from stud1;
+        ^
+student=#
+student=# select * from stud1;
+ sid | sname | grade
+-----+-------+-------
+(0 rows)
+
+
+student=# alter table stud1 add column subject varchar(10);
+ALTER TABLE
+student=# \d stud1
+                       Table "public.stud1"
+ Column  |         Type          | Collation | Nullable | Default
+---------+-----------------------+-----------+----------+---------
+ sid     | integer               |           |          |
+ sname   | character varying(10) |           |          |
+ grade   | character varying(10) |           |          |
+ subject | character varying(10) |           |          |
+
+
+student=# insert into stud1 values(1,'mudit','A','maths');
+INSERT 0 1
+student=# select * from stud1;
+ sid | sname | grade | subject
+-----+-------+-------+---------
+   1 | mudit | A     | maths
+(1 row)
+
+
+student=# insert into stud1 values(2,'mathur','A','maths');
+INSERT 0 1
+student=# select * from stud1;
+ sid | sname  | grade | subject
+-----+--------+-------+---------
+   1 | mudit  | A     | maths
+   2 | mathur | A     | maths
+(2 rows)
+
+
+student=# update stud1 set sid = 123 where sname = 'mudit';
+UPDATE 1
+student=# select * from stud1;
+ sid | sname  | grade | subject
+-----+--------+-------+---------
+   2 | mathur | A     | maths
+ 123 | mudit  | A     | maths
+(2 rows)
+
+
+student=# insert into stud1 values(214,'joey','A','maths');
+INSERT 0 1
+student=# insert into stud1 values(234,'rachel','A','maths');
+INSERT 0 1
+student=# select * from stud1;
+ sid | sname  | grade | subject
+-----+--------+-------+---------
+   2 | mathur | A     | maths
+ 123 | mudit  | A     | maths
+ 214 | joey   | A     | maths
+ 234 | rachel | A     | maths
+(4 rows)
+
+
+student=# delete from stud1;
+DELETE 4
+student=# \d stud1;
+                       Table "public.stud1"
+ Column  |         Type          | Collation | Nullable | Default
+---------+-----------------------+-----------+----------+---------
+ sid     | integer               |           |          |
+ sname   | character varying(10) |           |          |
+ grade   | character varying(10) |           |          |
+ subject | character varying(10) |           |          |
+
+
+student=# \d ;
+         List of relations
+ Schema | Name  | Type  |  Owner
+--------+-------+-------+----------
+ public | stud1 | table | postgres
+(1 row)
+
+
+student=#
