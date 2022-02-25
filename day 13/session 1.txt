@@ -1,0 +1,114 @@
+1.
+
+package filehandling;
+import java.io.*;
+
+
+public class Demo {
+
+	public static void main(String[] args) throws IOException {
+
+	    
+	    File f= new File("welcome.txt"); //created file
+		
+		f.createNewFile();
+		
+		System.out.println("file is created");
+
+	}
+
+}
+
+2.
+
+package filehandling;
+import java.io.*;
+
+public class FileReaderex {
+	
+	public static void main(String[] args) throws IOException {
+		
+		FileReader fr= new FileReader("welcome.txt");
+		
+		while(fr.read()!=-1) {
+			
+			char c=(char) fr.read();
+			System.out.print(c);
+		}
+	}
+
+}
+3.
+
+package filehandling;
+
+import java.io.*;
+
+public class FileWriterEx {
+	
+	public static void main(String[] args) throws IOException {
+		
+        FileWriter fw= new FileWriter("hello.txt");
+		
+		fw.write("welcome");
+		fw.write("to ");
+		fw.write("java");
+		fw.write("session");
+		
+		fw.close();
+		System.out.println("data is inserted");
+		
+	}
+}
+
+4.
+
+package filehandling;
+
+import java.io.*;
+
+public class Filehandlefolderex {
+
+	public static void main(String[] args) throws IOException {
+		
+		File f = new File("TestFile.txt");
+		File f1 = new File("Mudit");
+		
+		
+		f.createNewFile();
+		
+		boolean n = f1.mkdir();
+		System.out.println(n);
+		
+		System.out.println("file created");
+
+	}
+
+}
+
+5.
+
+package filehandling;
+
+import java.io.*;
+
+public class Printwriterex {
+	
+	public static void main(String[] args) throws IOException {
+		
+		FileWriter fw= new FileWriter("welcome.txt");
+		PrintWriter pw= new PrintWriter(fw);
+		
+		
+		pw.println("welcoem");
+		pw.println("to");
+		pw.println("files");
+		pw.println("hello");
+		pw.println(90);
+		pw.println(true);
+		pw.close();
+		System.out.println("data is inserted");
+		
+	}
+
+}
