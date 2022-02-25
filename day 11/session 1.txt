@@ -1,0 +1,159 @@
+1.
+
+package collection;
+
+import java.util.*;
+
+public class LinkedListexample {
+
+	public static void main(String[] args) {
+		
+		LinkedList li = new LinkedList();
+		
+		li.add(1000);
+		li.add("Mudit");
+		li.add(45.75f);
+		li.add(false);
+		li.add(null);
+		
+		
+		
+		System.out.println(li);
+		System.out.println(li.size());
+		System.out.println(li.contains("nikhil"));
+		System.out.println(li.getFirst());
+		System.out.println(li.getLast());
+		System.out.println(li.isEmpty());
+		System.out.println(li.remove());
+		System.out.println(li.size());
+		
+
+	}
+
+}
+
+2.
+
+package collection;
+
+import java.util.*;
+public class Linkedhashset {
+
+	public static void main(String[] args) {
+		
+		LinkedHashSet lhs = new LinkedHashSet();
+		
+		lhs.add("Mudit");
+		lhs.add("Mathur");
+		lhs.add("Joey");
+		lhs.add("rachel");
+		lhs.add(23);
+		lhs.add(45.08f);
+		lhs.add(true);
+		lhs.add(null);
+		
+		System.out.println(lhs);
+		
+		
+	}
+}
+
+3.
+
+package collection;
+
+import java.util.*;
+public class Linkedhashset {
+
+	public static void main(String[] args) {
+		
+		LinkedHashSet lhs = new LinkedHashSet();
+		
+		lhs.add("Mudit");
+		lhs.add("Mathur");
+		lhs.add("Joey");
+		lhs.add("rachel");
+		lhs.add(23);
+		lhs.add(45.08f);
+		lhs.add(true);
+		lhs.add(null);
+		
+		System.out.println(lhs);
+		
+		
+	}
+}
+
+4.
+
+package collection;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.ListIterator;
+
+public class Listiteratorex {
+	public static void main(String[] args) {
+		
+        ArrayList<String> al = new ArrayList();
+		
+		al.add("mudit");
+		al.add("mathur");
+		al.add("ross");
+		al.add("monica");
+		al.add("gojo");
+		
+		
+		ListIterator itr = al.listIterator();
+		
+		while(itr.hasNext()) {
+			System.out.println(itr.next());
+		}
+		
+		System.out.println("reverse direction");
+		while(itr.hasPrevious())
+		{
+			System.out.println(itr.previous());
+		}
+		
+	}
+
+}
+
+5.
+
+package collection;
+import java.util.*;
+
+public class PriorityQueuExample {
+
+	public static void main(String[] args) {
+		
+		PriorityQueue<String> pq= new  PriorityQueue<String>();
+		
+		pq.add("Mudit");
+		pq.add("Mathur");
+		pq.add("ross");
+		pq.add("rachel");
+		pq.add("fwefwef");
+		
+		System.out.println("head:"+pq.element());
+		System.out.println(pq);
+		
+		Iterator itr=pq.iterator();
+		
+		while(itr.hasNext()) {
+			
+			System.out.println(itr.next());
+			
+		}
+		pq.remove();
+		pq.poll();
+		System.out.println(pq);
+		
+		itr=pq.iterator();
+		while(itr.hasNext()) {
+			System.out.println(itr.next());
+		}
+	}
+}
